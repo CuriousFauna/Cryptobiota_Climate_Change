@@ -1,12 +1,11 @@
-library(gtable)
-library(grid)
-library(ggplot2)
-
 #><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><
 #  Figure 1 - Environmental data from mesocosm experiment 
 #><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><
 
+library(gtable)
+library(grid)
 library(ggplot2)
+
 table1<-read.csv("Daily_mean_temp_chem.csv", header=T)
 head(table1)
 colorOrder<-c("Heated","AcidifiedHeated","Control","Acidified")
@@ -36,7 +35,6 @@ p1<-ggplot(table1, aes(x=Day.past.1.1.16, y=Temp..in.situ., color=Treatment)) +
         axis.line.y = element_line(color="black", size = .25),
         axis.title.y = element_text(size = 10),
         axis.text=element_text(size=8))
-
 
 p2<-ggplot(table2, aes(x=Time.past.start, y=Temp.mean, color=Treatment)) + 
   geom_errorbar(aes(ymin=Temp.mean-Temp.SD, ymax=Temp.mean+Temp.SD), color="black", width=0.5) +
@@ -80,7 +78,6 @@ p3<-ggplot(table1, aes(x=Day.past.1.1.16, y=pH.out, color=Treatment)) +
         axis.title.y = element_text(size = 10),
         axis.title.x = element_text(size = 10),
         axis.text=element_text(size=8))
-
 
 p4<-ggplot(table2, aes(x=Time.past.start, y=pH.mean, color=Treatment)) + 
   geom_errorbar(aes(ymin=pH.mean-pH.SD, ymax=pH.mean+pH.SD), color="black", width=0.5) +
