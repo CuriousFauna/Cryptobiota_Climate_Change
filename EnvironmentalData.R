@@ -8,12 +8,10 @@ library(grid)
 library(ggplot2)
 
 table1<-read.csv("Daily_mean_temp_chem.csv", header=T)
-head(table1)
 colorOrder<-c("Heated","AcidifiedHeated","Control","Acidified")
 table1$Treatment<-factor(table1$Treatment, levels = colorOrder)
 
 table2<-read.csv("Diel_mean_temp_chem.csv", header=T)
-head(table2)
 table2$Treatment<-factor(table2$Treatment, levels = colorOrder)
 
 p1<-ggplot(table1, aes(x=Day.past.1.1.16, y=Temp..in.situ., color=Treatment)) + 
