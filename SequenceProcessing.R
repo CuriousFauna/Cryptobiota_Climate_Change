@@ -82,6 +82,7 @@ subsample3<-as.data.table(subsample2)
 subsample4<-subsample3[,colSums(subsample3 != 0) > 0, with = F]
 subsample4$Sample<-rownames(subsample2)
 subsample5 <- subsample4 %>% dplyr::select(Sample, everything())
+
 # Now having cleaned working data frame of samples and sequences
 write.csv(subsample5, "WorkingARMS_Sequences.csv", row.names = F)
 
