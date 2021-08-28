@@ -3,6 +3,9 @@
 #  Sequence Data Processing 
 #><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><
 
+# This script takes the OTU table output from JAMP processing - https://github.com/VascoElbrecht/JAMP
+# for further processing.
+
 library(data.table) # read and manipulate large data
 library(dplyr) # data manipulation
 library(vegan) # diversity estimates
