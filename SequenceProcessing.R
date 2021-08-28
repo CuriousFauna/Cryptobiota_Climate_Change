@@ -46,7 +46,7 @@ MOTU4 <- MOTU3 %>% dplyr::select(ID, everything())
 #  Annotation File 
 #><><><><><><><><><>
       
-annotate<-fread("SequenceAnnotations.csv") 
+annotate<-fread("SequenceAnnotatations.csv") 
 annotate1<-annotate[,c("ID","Reads", "FinalKingdom","FinalPhylum","FinalClass","FinalOrder","FinalFamily","FinalGenus", "FinalSpecies","Calcify", "TaxaFrequency")]
 
 # merging the annotated file with the sequence file 
@@ -64,7 +64,7 @@ MACSE2<-merge(MASCE, SequenceCheck, by = "ID")
 dataframe2fas(MACSE2, file = "OA_MACSE.fasta")
 
 # bringing back MACSE output based on ID
-outputMACSE<-read.table("OA_Cleaned.txt", col.names = T)
+outputMACSE<-read.table("MACSE_output.txt", col.names = T)
 colnames(outputMACSE)[1]<-"ID"
 
 # Checking the number of identified pseudogenes 
@@ -72,6 +72,8 @@ Questionable<-anti_join(annotate4,outputMACSE, by = "ID") # there were 4
 
 # Removing those IDs identified as pseudogenes from dataset
 annotate5<-merge(outputMACSE, annotate4, by = "ID")
+# Working Annotation File to Match Sequences
+write.csv(annotate5, "Annotations_Working.csv",row.names = F)
 
 # Subsampling to correct for sequence size
 subsample<-as.data.frame(t(annotate5[,12:ncol(annotate5)]))
@@ -82,9 +84,8 @@ subsample3<-as.data.table(subsample2)
 subsample4<-subsample3[,colSums(subsample3 != 0) > 0, with = F]
 subsample4$Sample<-rownames(subsample2)
 subsample5 <- subsample4 %>% dplyr::select(Sample, everything())
-
 # Now having cleaned working data frame of samples and sequences
-write.csv(subsample5, "WorkingARMS_Sequences.csv", row.names = F)
+write.csv(subsample5, "ARMS_Data_Working.csv", row.names = F)
 
 
       #><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>

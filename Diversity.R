@@ -10,8 +10,8 @@ library(vegan)
 library(car)
 library(ggpubr)
 
-Richness<-read.csv("WorkingARMS_Sequences.csv")
-metadata<-read.csv("MetaData_OA.csv")
+Richness<-read.csv("ARMS_Data_Working.csv")
+metadata<-read.csv("MetaData_ARMS.csv")
 
 Richness2<-merge(metadata, Richness, by = "Sample")
 Richness2$Temperature<-as.factor(Richness2$Temperature)
@@ -20,9 +20,9 @@ Richness2$HeaderTank<-as.factor(Richness2$HeaderTank)
 Richness2$Richness<-specnumber(Richness2[,8:ncol(Richness2)])
 Richness2 <- Richness2 %>% dplyr::select(Richness, everything())
 
-        #><><><><><><><><><><><><><><><><><><><><><><><><>
+        #><><><><><><><><><><><><><><><>
         #  Table S5- Summary Stats
-        #><><><><><><><><><><><><><><><><><><><><><><><><>
+        #><><><><><><><><><><><><><><><>
             SummaryRichness<-Richness2 %>%
             group_by(Treatment) %>%
             get_summary_stats(Richness, type = "mean_sd")
@@ -33,9 +33,14 @@ Richness2 <- Richness2 %>% dplyr::select(Richness, everything())
             
 # ANOVA Richness ~ Conditions
 model  <- aov(Richness~CO2*Temperature/HeaderTank, data=Richness2)
-summary(model) # Table S6
-lsmeans(model, pairwise ~ CO2*Temperature) # Table S7
-hist(residuals(model))
+              #<><><><><><><><><><><><><>
+              # Table S6 - summary output 
+              #<><><><><><><><><><><><><>
+summary(model) 
+              #<><><><><><><><><><><><><>
+              # Table S7 - lsmean output 
+              #<><><><><><><><><><><><><>
+lsmeans(model, pairwise ~ CO2*Temperature) 
 
 # Checking residuals for assumptions of normality and homogeneity
 ggqqplot(residuals(model))
@@ -127,9 +132,9 @@ Beta2<-Beta[,8:ncol(Beta)]
 metaBeta<-Beta[,1:7]
 
 
-#><><><><><><><><><><>
-#  PERMANOVAs
-#><><><><><><><><><><>
+#><><><><><><><><><><><><><><>
+#  PERMANOVA - Table S9
+#><><><><><><><><><><><><><><>
 
 # Community Composition - Presence/Absence
 
@@ -215,9 +220,9 @@ ordispider(Bray_Acid, Beta$CO2, col=c("tan","black"))
 ordiellipse(Bray_Acid, Beta$CO2, col=c("tan","black"), draw="poly", conf=0.95,kind="se")
 
 
-#><><><><><><><><><><><><><>
-#  PERDISP and Figure S5
-#><><><><><><><><><><><><><>
+#><><><><><><><><><><><><><><><><><><><><><>
+#  PERDISP - Table S9 and S10 and Figure S5
+#><><><><><><><><><><><><><><><><><><><><><>
 
 groupTemp<-as.factor(Beta$Temperature)
 groupAcid<-as.factor(Beta$CO2)
