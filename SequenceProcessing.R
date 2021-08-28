@@ -1,6 +1,6 @@
 
 #><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><
-#  Sequence Data Processing 
+#  OTU Table Processing 
 #><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><
 
 # This script takes the OTU table output from JAMP processing - https://github.com/VascoElbrecht/JAMP
