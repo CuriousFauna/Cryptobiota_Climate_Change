@@ -12,7 +12,7 @@ The JAMP pipeline output is the 3_Raw_MOTU_Table.csv file located in the Data Fo
 
 ## Data and R Code
 
-All data and R code used to obtain the results are presented in the Data and R Code folders. R packages needed to process the data are provided in the respective heading of each R file. See manuscript supplement for the details on sequence annotations and conducted statistical analyses. All Figures and accompanying Tables presented in the manuscript are highlighted within the R files. Figures are found here:
+All data and R code used to obtain the results are presented in the Data and R Code folders. R packages needed to process the data are provided in the respective heading of each R file. See manuscript supplement for the details on sequence annotations and conducted statistical analyses. All Figures and accompanying Tables presented in the manuscript are highlighted within the R files and are found here:
 
 - Figure 1 - EnvironmentalData.R
 - Figure 2 - Diversity.R 
