@@ -143,7 +143,13 @@ write.csv(subsample5, "ARMS_Data_Working.csv", row.names = F)
       PhylaSequences<-aggregate(Sum ~ FinalPhylum, data = PhySeqRare2, FUN = sum)
       PhylaSequences$tally<- count(PhySeqRare2, FinalPhylum)
       
+      #><><><><><><><><><><><><><><><><><><><><><><><><><><><>><><><><>
+      #  Figure S4 - Species Annotations
+      #><><><><><><><><><><><><><><><><><><><><><><><><><><><>><><><><>      
       
+            # Table S4 was produced based on the MOTUs identified to species 
+            # from the annotate5 dataframe ("ARMS_Data_Working.csv")
+
       #><><><><><><><><><><><><><><><><><><><><><><><><><><><>><><><><>
       #  Figure S3 - MOTU annotations across classification levels
       #><><><><><><><><><><><><><><><><><><><><><><><><><><><>><><><><>
