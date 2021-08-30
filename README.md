@@ -18,8 +18,7 @@ All data and R code used to obtain the results are presented in the Data and R C
 - Figure 2 - Diversity.R 
 - Figure 3 - Phyla_Family_Composition.R
 - Fig. S3 - MOTU_Processing.R
-- Fig. S4 - Diversity.R
-- Fig. S5 - Diversity.R
+- Fig. S4 and Fig. S5 Diversity.R
 - Fig. S6 - Phyla_Family_Composition.R
 - Tables S1:S4 - MOTU_Processing
 - Tables S5:S10 - Diversity.R
