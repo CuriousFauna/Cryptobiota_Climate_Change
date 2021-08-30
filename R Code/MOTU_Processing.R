@@ -50,7 +50,7 @@ MOTU4 <- MOTU3 %>% dplyr::select(ID, everything())
 #><><><><><><><><><>
       
 annotate<-fread("Tota_MOTU_Annotatations.csv") 
-annotate1<-annotate[,c("ID","Reads", "FinalKingdom","FinalPhylum","FinalClass","FinalOrder","FinalFamily","FinalGenus", "FinalSpecies","Calcify", "TaxaFrequency")]
+annotate1<-annotate[,c("ID","Raw_Reads", "FinalKingdom","FinalPhylum","FinalClass","FinalOrder","FinalFamily","FinalGenus", "FinalSpecies","Calcify", "TaxaFrequency")]
 
 # merging the annotated file with the sequence file 
 annotate2<-merge(annotate1,MOTU4,by = "ID") 
