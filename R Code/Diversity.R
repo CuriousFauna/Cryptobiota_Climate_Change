@@ -2,13 +2,13 @@
 #  Alpha Diversity
 #><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><
 
-library(dplyr)
-library(plyr)
-library(lsmeans)
-library(ggplot2)
-library(vegan)
-library(car)
-library(ggpubr)
+library(dplyr) # Data Manipulation
+library(plyr) # Data Manipulation
+library(lsmeans) # pairwise stats
+library(ggplot2) # plotting
+library(vegan) # Diversity Stats
+library(car) # Model Assumption Checks
+library(ggpubr) # Graphing Model Assumption Checks
 
 Richness<-read.csv("ARMS_Data_Working.csv")
 metadata<-read.csv("MetaData_ARMS.csv")
