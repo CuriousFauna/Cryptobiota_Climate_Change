@@ -12,7 +12,7 @@ library(vegan) # diversity estimates
 library(seqRFLP) # create fasta file
 library(EcolUtils) # Permutational Rarefraction
 
-MOTU<-fread("3_Raw_OTU_Table.csv")
+MOTU<-fread("3_Raw_MOTU_Table.csv")
 
 # creating dataframe of ID tied to sequence for MASCSE step 
 SequenceCheck<-MOTU[,c("ID","sequ")]
@@ -49,7 +49,7 @@ MOTU4 <- MOTU3 %>% dplyr::select(ID, everything())
 #  Annotation File 
 #><><><><><><><><><>
       
-annotate<-fread("SequenceAnnotatations.csv") 
+annotate<-fread("Tota_MOTU_Annotatations.csv") 
 annotate1<-annotate[,c("ID","Reads", "FinalKingdom","FinalPhylum","FinalClass","FinalOrder","FinalFamily","FinalGenus", "FinalSpecies","Calcify", "TaxaFrequency")]
 
 # merging the annotated file with the sequence file 
