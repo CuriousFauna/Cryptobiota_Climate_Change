@@ -12,7 +12,7 @@ library(vegan) # diversity estimates
 library(seqRFLP) # create fasta file
 library(EcolUtils) # Permutational Rarefraction
 
-MOTU<-fread("3_Raw_MOTU_Table.csv")
+MOTU<-fread("Raw_MOTU_Table.csv")
 
 # creating dataframe of ID tied to sequence for MASCSE step 
 SequenceCheck<-MOTU[,c("ID","sequ")]
