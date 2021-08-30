@@ -8,7 +8,7 @@ The demultiplexed fastq files are named ArmsMeso1 thru 22. There are two files, 
 
 Sequences were processed through the JAMP pipeline - https://github.com/VascoElbrecht/JAMP. See manuscript supplement for details.
 
-The JAMP pipeline output is the 3_Raw_MOTU_Table.csv file located in the Data Folder. 
+The JAMP pipeline output is the "Raw_MOTU_Table.csv" file located in the Data Folder. 
 
 ## Data and R Code
 
