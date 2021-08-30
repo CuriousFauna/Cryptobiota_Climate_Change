@@ -2,11 +2,13 @@
 #  Community Structure - Phyla and Families 
 #><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><
 
-library(dplyr)
-library(plyr)
-library(reshape2)
-library(RVAideMemoire) 
-library(ggplot2)
+library(dplyr) # Data Manipulation
+library(plyr) # Data Manipulation
+library(reshape2) # Data Manipulation
+library(data.table) # Data Manipulation
+library(RVAideMemoire) # Permutational Anovas
+library(ggplot2) # Plotting
+library(vegan) # Richness calculation
 
 
 #><><><><><><><><><><
@@ -397,7 +399,7 @@ MotuPhy5<-dcast(MotuPhy4, ID ~ Treatment, value.var = "PA", fun.aggregate = sum)
 # Getting total MOTU per treatment
 RelAmbientMOTUTotal<-specnumber(MotuPhy5[,2:ncol(MotuPhy5)], MARGIN = 2)
 RelAmbientMOTUTotal
-MotuPhy6<-as.data.frame(ifelse(MotuPhy5[2:5] > 0, 1, 0))
+MotuPhy6<-as.data.frame(ifelse(MotuPhy5[,2:5] > 0, 1, 0))
 MotuPhy6$ID<-MotuPhy5$ID
 MotuPhy7<-merge(PhyAnnotate1, MotuPhy6, by = "ID")
 MotuPhy8<-melt(MotuPhy7,id=c("ID", "FinalPhylum"), variable = "Treatment")
