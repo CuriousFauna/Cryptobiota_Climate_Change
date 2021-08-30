@@ -1,7 +1,11 @@
 
 #><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><
-#  Environmental data from mesocosm experiment - Figure 1
+#  Environmental data from mesocosm experiment 
 #><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><
+
+<><><><><><><>
+   Figure 1
+<><><><><><><>
 
 library(gtable)
 library(grid)
