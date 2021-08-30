@@ -66,7 +66,7 @@ MACSE2<-merge(MASCE, SequenceCheck, by = "ID")
 # creating fasta file to run through MACSE
 dataframe2fas(MACSE2, file = "OA_MACSE.fasta")
 
-# bringing back MACSE output based on ID
+# bringing back MACSE output based on ID; these are the MOTUs not identified as pseudogenes
 outputMACSE<-read.table("MACSE_output.txt", col.names = T)
 colnames(outputMACSE)[1]<-"ID"
 
