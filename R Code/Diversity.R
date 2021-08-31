@@ -78,6 +78,8 @@ All_list<-list()
     Treat6<-Treat5[,c(1)]
     share_list[[i]] <- sort(Treat6)
   }
+  sort(unique(ShareTreat)
+  # fill based on displayed order
   fill<- c("Control","Acidified","Heated","AcidifiedHeated")
   names(share_list) <- fill
   OLlist <- overLapper(setlist=share_list, sep="_", type="vennsets")
