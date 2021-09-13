@@ -20,6 +20,6 @@ All data and R code used to obtain the results are presented in the Data and R C
 - Fig. S3 - MOTU_Processing.R
 - Fig. S4 and Fig. S5 Diversity.R
 - Fig. S6 - Phyla_Family_Composition.R
-- Tables S1:S4 - MOTU_Processing
+- Tables S1:S4 - MOTU_Processing.R
 - Tables S5:S10 - Diversity.R
 - Tables S11:S14 - Phyla_Family_Composition.R
