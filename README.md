@@ -1,5 +1,5 @@
 # Cryptobiota and Climate Change
-This is a repository for code and data used in the analysis of the manuscript entitled: "Biodiversity of coral reef cryptobiota shuffles but does not decline under the combined stressors of ocean warming and acidification".
+This is a repository for code and data used in the analysis of the manuscript entitled: "Biodiversity of coral reef cryptobiota shuffles but does not decline under the combined stressors of ocean warming and acidification", https://www.pnas.org/content/118/39/e2103275118.
 
 ## Fastq Sequences
 Fastq files were submited to NCBI through Genome -https://geome-db.org/workbench/project-overview. The NCBI Sequence Read Archive (SRA) numbers for this project are SRS7105074-SRS7105095 and can be obtained here: https://www.ncbi.nlm.nih.gov/sra. 
